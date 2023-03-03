@@ -6,93 +6,112 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>Creating a Neuron using Code</title>
-        <meta name="description" content="A website made with Typedream.">
+        <meta name="description" content="A mathematical model implemented in MATLAB that can simulate the activity of a neuron, such as action excitation, inhibition, and action potentials. ">
         <link rel="icon" type="image/x-icon" href="https://api.typedream.com/v0/document/public/3be3aa6e-3d86-4746-acfe-3138a655a388/2LF1WoIbrVeraxnVUei3TsMe596_mihir.png">
         <link rel="apple-touch-icon" href="https://api.typedream.com/v0/document/public/3be3aa6e-3d86-4746-acfe-3138a655a388/2LF1WoIbrVeraxnVUei3TsMe596_mihir.png">
         <meta property="og:url" content="https://www.mihir-modak.com/my-projects/creating-a-neuron-using-code">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Creating a Neuron using Code">
-        <meta property="og:description" content="A website made with Typedream.">
+        <meta property="og:description" content="A mathematical model implemented in MATLAB that can simulate the activity of a neuron, such as action excitation, inhibition, and action potentials. ">
         <meta property="og:site_name" content="Personal Portfolio">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@typedreamHQ">
         <meta name="twitter:title" content="Creating a Neuron using Code">
-        <meta name="twitter:description" content="A website made with Typedream.">
+        <meta name="twitter:description" content="A mathematical model implemented in MATLAB that can simulate the activity of a neuron, such as action excitation, inhibition, and action potentials. ">
         <meta name="next-head-count" content="15">
         <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
-        <link rel="preload" href="Creating%20a%20Neuron%20using%20Code_files/boxicons.min.css" as="style">
-        <link rel="stylesheet" href="Creating%20a%20Neuron%20using%20Code_files/boxicons.min.css">
+        <link rel="preload" href="resources/boxicons.min.css" as="style">
+        <link rel="stylesheet" href="resources/boxicons.min.css">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-        <link rel="preload" href="Creating%20a%20Neuron%20using%20Code_files/cdec1f2fe2c90e62.css" as="style">
-        <link rel="stylesheet" href="Creating%20a%20Neuron%20using%20Code_files/cdec1f2fe2c90e62.css" data-n-g="">
-        <link rel="preload" href="https://www.mihir-modak.com/_next/static/css/68fc3a0328256e37.css" as="style">
+        <link rel="preload" href="resources/cdec1f2fe2c90e62.css" as="style">
+        <link rel="stylesheet" href="resources/cdec1f2fe2c90e62.css" data-n-g="">
+        <link rel="preload" href="resources/68fc3a0328256e37.css" as="style">
+        <link rel="stylesheet" href="resources/68fc3a0328256e37.css">
         <noscript data-n-css=""></noscript>
-        <style data-n-href="/_next/static/css/68fc3a0328256e37.css">
-            .Watermark_watermark__1QliA{position:fixed;
-                    right:10px;
-                    bottom:10px;
-                    padding:5px 10px;
-                    background-color:var(--background-button);
-                    box-shadow:var(--shadow-watermark);
-                    border:1px solid var(--border-modal);
-                    border-radius:5px;
-                    font-size:12px;
-                    line-height:24px;
-                    color:var(--text);
-                    font-weight:500}@media only screen and (max-width:768px){.Watermark_watermark__1QliA{padding:0 8px;
+        <!--<style data-n-href="/_next/static/css/68fc3a0328256e37.css">
+            .Watermark_watermark__1QliA{
+                position:fixed;
+                right:10px;
+                bottom:10px;
+                padding:5px 10px;
+                background-color:var(--background-button);
+                box-shadow:var(--shadow-watermark);
+                border:1px solid var(--border-modal);
+                border-radius:5px;
+                font-size:12px;
+                line-height:24px;
+                color:var(--text);
+                font-weight:500
+            }
+            @media only screen and (max-width:768px){
+                .Watermark_watermark__1QliA{
+                    padding:0 8px;
                     font-size:9px;
-                    border-radius:3px}}.ThemeToggler_switch__UxZcW{position:absolute;
-                    right:26px;
-                    transform:translateY(16px);
-                    z-index:1;
-                    border-radius:24px;
-                    display:flex;
-                    justify-content:center;
-                    align-items:center;
-                    height:56px;
-                    width:56px;
-                    border:0;
-                    background-color:#dcdcdc40;
-                    color:#00000026
+                    border-radius:3px
                 }
-                .ThemeToggler_switch__UxZcW:hover{color:#00000066}
-                [data-theme=dark].ThemeToggler_switch__UxZcW{
-                    background-color:#dcdcdc1f;
-                    color:#ffffff3b
-                }
-                [data-theme=dark].ThemeToggler_switch__UxZcW:hover{color:#ffffffb8}
-                .ThemeToggler_icon__mrbco{vertical-align:middle;
-                overflow:hidden}
-                .ThemeToggler_sun__m2ZO4{display:inline-block}
-                .ThemeToggler_moon__0QYFn,[data-theme=dark]
-                .ThemeToggler_sun__m2ZO4{display:none}
-                [data-theme=dark].ThemeToggler_moon__0QYFn{
-                    display:none;
-                    display:inline-block
-                }
-                @media only screen and (max-width:1023px){
-                    .ThemeToggler_switch__UxZcW{right:8px}
-                }
-        </style>
-        <script defer="defer" nomodule="" src="Creating%20a%20Neuron%20using%20Code_files/polyfills-c67a75d1b6f99dc8.js"></script>
-        <script defer="defer" src="Creating%20a%20Neuron%20using%20Code_files/2edb282b.d8e8452d329e0e57.js"></script>
-        <script defer="defer" src="Creating%20a%20Neuron%20using%20Code_files/7318.907ac2bfda2c2882.js"></script>
-        <script defer="defer" src="Creating%20a%20Neuron%20using%20Code_files/1367-5ebc47e273c5f365.js"></script>
-        <script defer="defer" src="Creating%20a%20Neuron%20using%20Code_files/8953.e5c5c4f2a7658665.js"></script>
-        <script defer="defer" src="Creating%20a%20Neuron%20using%20Code_files/2928.e0413ab2b10c3e6a.js"></script>
-        <script src="Creating%20a%20Neuron%20using%20Code_files/webpack-78c2e58b5af6e79a.js" defer="defer"></script>
-        <script src="Creating%20a%20Neuron%20using%20Code_files/framework-7739c042446858ae.js" defer="defer"></script>
-        <script src="Creating%20a%20Neuron%20using%20Code_files/main-9fb5194341c2a389.js" defer="defer"></script>
-        <script src="Creating%20a%20Neuron%20using%20Code_files/_app-f2cf6a0f600886ca.js" defer="defer"></script>
-        <script src="Creating%20a%20Neuron%20using%20Code_files/8bd53eb9-f10a749795515141.js" defer="defer"></script>
-        <script src="Creating%20a%20Neuron%20using%20Code_files/5090-6bfe927991f783b6.js" defer="defer"></script>
-        <script src="Creating%20a%20Neuron%20using%20Code_files/2854-d3d556300bf25ce2.js" defer="defer"></script>
-        <script src="Creating%20a%20Neuron%20using%20Code_files/3958-cf6a7a772ef71d6f.js" defer="defer"></script>
-        <script src="Creating%20a%20Neuron%20using%20Code_files/6016-3b58166ef16308be.js" defer="defer"></script>
-        <script src="Creating%20a%20Neuron%20using%20Code_files/9538-73a3b4286b357444.js" defer="defer"></script>
-        <script src="Creating%20a%20Neuron%20using%20Code_files/[[...path]]-dba58361b058ba6b.js" defer="defer"></script>
-        <script src="Creating%20a%20Neuron%20using%20Code_files/_buildManifest.js" defer="defer"></script>
-        <script src="Creating%20a%20Neuron%20using%20Code_files/_ssgManifest.js" defer="defer"></script>
+            }
+            .ThemeToggler_switch__UxZcW{
+                position:absolute;
+                right:26px;
+                transform:translateY(16px);
+                z-index:1;
+                border-radius:24px;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                height:56px;
+                width:56px;
+                border:0;
+                background-color:#dcdcdc40;
+                color:#00000026
+            }
+            .ThemeToggler_switch__UxZcW:hover{
+                color:#00000066
+            }
+            [data-theme=dark].ThemeToggler_switch__UxZcW {
+                background-color:#dcdcdc1f;
+                color:#ffffff3b
+            }
+            [data-theme=dark].ThemeToggler_switch__UxZcW:hover{
+                color:#ffffffb8
+            }
+            .ThemeToggler_icon__mrbco{
+                vertical-align:middle;
+                overflow:hidden
+            }
+            .ThemeToggler_sun__m2ZO4{
+                display:inline-block
+            }
+            .ThemeToggler_moon__0QYFn,[data-theme=dark].ThemeToggler_sun__m2ZO4 {
+                display:none
+            }
+            [data-theme=dark].ThemeToggler_moon__0QYFn {
+                display:none;
+                display:inline-block
+            }
+            @media only screen and (max-width:1023px){
+                .ThemeToggler_switch__UxZcW{right:8px}
+            }
+        </style>-->
+        <script defer="defer" nomodule="" src="resources/polyfills-c67a75d1b6f99dc8.js"></script>
+        <script defer="defer" src="resources/2edb282b.d8e8452d329e0e57.js"></script>
+        <script defer="defer" src="resources/7318.907ac2bfda2c2882.js"></script>
+        <script defer="defer" src="resources/1367-5ebc47e273c5f365.js"></script>
+        <script defer="defer" src="resources/8953.e5c5c4f2a7658665.js"></script>
+        <script defer="defer" src="resources/2928.e0413ab2b10c3e6a.js"></script>
+        <script src="resources/webpack-78c2e58b5af6e79a.js" defer="defer"></script>
+        <script src="resources/framework-7739c042446858ae.js" defer="defer"></script>
+        <script src="resources/main-9fb5194341c2a389.js" defer="defer"></script>
+        <script src="resources/_app-f2cf6a0f600886ca.js" defer="defer"></script>
+        <script src="resources/8bd53eb9-f10a749795515141.js" defer="defer"></script>
+        <script src="resources/5090-6bfe927991f783b6.js" defer="defer"></script>
+        <script src="resources/2854-d3d556300bf25ce2.js" defer="defer"></script>
+        <script src="resources/3958-cf6a7a772ef71d6f.js" defer="defer"></script>
+        <script src="resources/6016-3b58166ef16308be.js" defer="defer"></script>
+        <script src="resources/9538-73a3b4286b357444.js" defer="defer"></script>
+        <script src="resources/[[...path]]-dba58361b058ba6b.js" defer="defer"></script>
+        <script src="resources/_buildManifest.js" defer="defer"></script>
+        <script src="resources/_ssgManifest.js" defer="defer"></script>
         <style data-href="https://fonts.googleapis.com/css2?family=Inter:wght@40;50;60;70;80;900&amp;family=Quicksand:wght@40;50;60;70;80;900&amp;family=Libre+Caslon+Text:wght@40;50;60;70;80;900&amp;family=Quicksand:wght@40;50;60;70;80;900&amp;family=Space+Mono:wght@40;50;60;70;80;900&amp;display=swap">
             @font-face{
                 font-family:'Inter';
@@ -709,265 +728,339 @@
     </head>
     <body>
     <div id="__next">
-    <!--$-->
+
     <div class="typedream content slate-root _1buablx0 _1buablx4" style="min-height:100vh">
-    <div class="slate-spacer r2ud8k0" style="height:70px;
+    <!-- <div class="slate-spacer r2ud8k0" style="height:70px;
 				width:700px;
-				max-width:min(100%, 700px)"></div>
+				max-width:min(100%, 700px)">
+    </div> -->
+
+    <!-- Page Title -->
     <h1 class="slate-h1 ohgk4r1 ohgk4r0" style="--width:700px;
 				--max-width:min(100%, 700px)">
-    <span class="_1untytp0">Creating a Neuron using Code</span></h1>
+        <span class="_1untytp0">Creating a Neuron using Code</span>
+    </h1>
+
+    <!-- Authhor Info -->
     <p class="slate-p _1vo7q450" style="--width:700px;
 				--max-width:min(100%, 700px)">
-    <span class="_1untytp0">
-    <span style="color:var(--text-light);
-				--font-size:16px;
-				--mobile-font-size:16px">Mihir Modak</span></span>
-    <span class="_1untytp0">
-    <span style="color:var(--text-light);
-				--font-size:16px;
-				--mobile-font-size:16px"> • </span></span>
-    <span class="_1untytp0">
-    <span style="color:var(--text-light);
-				--font-size:16px;
-				--mobile-font-size:16px"></span></span></p>
-    <p class="slate-p _1vo7q450" style="--width:700px;
+        <span class="_1untytp0" 
+            style="color:var(--text-light);
+                    --font-size:16px;
+                    --mobile-font-size:16px">Mihir Modak • September 23, 2021 • In-Class</span>
+    </p>
+
+    <!-- Spacer -->
+    <br><br><br>
+
+    <!-- <p class="slate-p _1vo7q450" style="--width:700px;
 				--max-width:min(100%, 700px)">
-    <span class="_1untytp0"></span></p>
-    <p class="slate-p _1vo7q450" style="--width:700px;
+    <span class="_1untytp0"></span></p> -->
+    <!-- <p class="slate-p _1vo7q450" style="--width:700px;
 				--max-width:min(100%, 700px)">
     <span class="_1untytp0">
     <span style="color:var(--text-light);
 				--font-size:20px;
 				--mobile-font-size:16px;
 				--line-height:1.4;
-				--mobile-line-height:21px"></span></span></p>
-    <p class="slate-p _1vo7q450" style="--width:700px;
+				--mobile-line-height:21px"></span></span></p> -->
+    <!-- <p class="slate-p _1vo7q450" style="--width:700px;
 				--max-width:min(100%, 700px)">
-    <span class="_1untytp0"></span></p>
+    <span class="_1untytp0"></span></p> -->
+
+    <!-- Cover Image -->
     <div class="slate-img _10w3u1b0" style="justify-content:center;
 				--max-width:min(100%, 804.3234011627907px)">
-    <div class="_10w3u1b1" style="--width:804.3234011627907px;
-				--height:435.95680147058823px;
-				--aspect-ratio:804.3234011627907 / 435.95680147058823;
-				overflow:hidden;
-				position:relative">
-    <div contenteditable="false">
-    <img alt="" src="Creating%20a%20Neuron%20using%20Code_files/images.jpg" decoding="async" data-nimg="1" class="_10w3u1b2" loading="lazy" style="" width="804" height="436"></div></div></div>
-    <p class="slate-p _1vo7q450" style="--width:700px;
+        <div class="_10w3u1b1" style="--width:804.3234011627907px;
+                    --height:435.95680147058823px;
+                    --aspect-ratio:804.3234011627907 / 435.95680147058823;
+                    overflow:hidden;
+                    position:relative">
+            <div contenteditable="false">
+                <img alt="" src="resources/cover.gif" decoding="async" data-nimg="1" class="_10w3u1b2" loading="lazy" style="" width="804" height="436">
+            </div>
+        </div>
+    </div>
+
+    <!-- <p class="slate-p _1vo7q450" style="--width:700px;
 				--max-width:min(100%, 700px)">
-    <span class="_1untytp0"></span></p>
+    <span class="_1untytp0"></span></p> -->
+
+    <!-- Content of Page -->
     <div class="slate-rich_text_content x1sja70" style="width:700px;
 				max-width:min(100%, 700px)">
-    <h2 class="slate-h2 ohgk4r2 ohgk4r0" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0">Background &amp;
-				 Motivation</span></h2>
-    <p class="slate-p _1vo7q450" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0">This is a simulation of the activity of a single neuron using a mathematical model called the </span>
-    <span class="_1untytp0">
-    <em>Hodgkin-Huxley Model</em></span>
-    <span class="_1untytp0">. This model can accurately represent the excitation and the </span>
-    <span class="_1untytp0">
-    <em>action potential</em></span>
-    <span class="_1untytp0"> of a neuron. It can also account for sodium, potassium, and chloride ion concentrations and use those parameters to drive the excitation of the neuron. In this project, I was able to implement this model in MATLAB, and successfully simulate (and control) the activity of a neuron.</span></p>
-    <h2 class="slate-h2 ohgk4r2 ohgk4r0" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0">Process</span></h2>
-    <p class="slate-p _1vo7q450" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0"></span></p>
-    <h2 class="slate-h2 ohgk4r2 ohgk4r0" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0">Results</span></h2>
-    <p class="slate-p _1vo7q450" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0"></span></p>
-    <h2 class="slate-h2 ohgk4r2 ohgk4r0" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0">Contributors</span></h2>
-    <div class="slate-column _1j76um0" style="width:700px;
-				max-width:min(100%, 700px)">
-    <div class="_1j76um4 _1j76um1">
-    <div class="_1j76umd" style="--min-height:auto;
-				--width:700px;
-				--column-width:700px">
-    <div class="slate-column_item _122mapi0" style="--width:50%;
-				--width-float:0.5">
-    <div role="none" class="slate-container card _1bgwy4x9 _1bgwy4x0" style="--min-height:auto;
-				--width:700px;
-				--max-width:min(100%, 700px);
-				background:var(--background-highlight)">
-    <h2 class="slate-h2 ohgk4r2 ohgk4r0" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0">Harry Zou</span></h2>
-    <p class="slate-p _1vo7q450" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0">
-    <em>
-    <strong>
-    <span style="color:var(--text-light)">Teammate</span></strong></em></span></p>
-    <div class="slate-column _1j76um0" style="width:700px;
-				max-width:min(100%, 700px)">
-    <div class="_1j76um4 _1j76um1">
-    <div class="_1j76umd" style="--min-height:auto;
-				--width:700px;
-				--column-width:700px">
-    <div class="slate-column_item _122mapi0" style="--width:50%;
-				--width-float:0.5">
-    <div class="slate-img _10w3u1b0" style="justify-content:center;
-				--max-width:min(100%, 700px)">
-    <div class="_10w3u1b1" style="--width:700px;
-				--height:54.66957946477335px;
-				--aspect-ratio:700 / 54.66957946477335;
-				overflow:hidden;
-				position:relative">
-    <div contenteditable="false">
-    <img alt="" srcset="Creating%20a%20Neuron%20using%20Code_files/2LEyTt5SBaoHJ5pBwljjstIUAmj_7ed3888f-cd15-4d56-8a81-038ba1a3.jpg 1x, Creating%20a%20Neuron%20using%20Code_files/2LEyTt5SBaoHJ5pBwljjstIUAmj_7ed3888f-cd15-4d56-8a81-038b_002.jpg 2x" src="Creating%20a%20Neuron%20using%20Code_files/2LEyTt5SBaoHJ5pBwljjstIUAmj_7ed3888f-cd15-4d56-8a81-038b_002.jpg" decoding="async" data-nimg="1" class="_10w3u1b2" loading="lazy" style="color:transparent" width="700" height="55"></div></div></div></div>
-    <div class="slate-column_item _122mapi0" style="--width:50%;
-				--width-float:0.5">
-    <p class="slate-p _1vo7q450" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0"></span></p></div></div></div></div></div></div>
-    <div class="slate-column_item _122mapi0" style="--width:50%;
-				--width-float:0.5">
-    <div role="none" class="slate-container card _1bgwy4x9 _1bgwy4x0" style="--min-height:auto;
-				--width:700px;
-				--max-width:min(100%, 700px);
-				background:var(--background-highlight)">
-    <h2 class="slate-h2 ohgk4r2 ohgk4r0" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0">Andrew Li</span></h2>
-    <p class="slate-p _1vo7q450" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0">
-    <em>
-    <strong>
-    <span style="color:var(--text-light)">Teammate</span></strong></em></span></p>
-    <div class="slate-column _1j76um0" style="width:700px;
-				max-width:min(100%, 700px)">
-    <div class="_1j76um4 _1j76um1">
-    <div class="_1j76umd" style="--min-height:auto;
-				--width:700px;
-				--column-width:700px">
-    <div class="slate-column_item _122mapi0" style="--width:50%;
-				--width-float:0.5">
-    <div class="slate-img _10w3u1b0" style="justify-content:center;
-				--max-width:min(100%, 700px)">
-    <div class="_10w3u1b1" style="--width:700px;
-				--height:54.66957946477335px;
-				--aspect-ratio:700 / 54.66957946477335;
-				overflow:hidden;
-				position:relative">
-    <div contenteditable="false">
-    <img alt="" srcset="Creating%20a%20Neuron%20using%20Code_files/2LEyTvdoiuXT0jlDjleu6TTptdo_034a2931-981e-43d9-9596-dfbb43fa.jpg 1x, Creating%20a%20Neuron%20using%20Code_files/2LEyTvdoiuXT0jlDjleu6TTptdo_034a2931-981e-43d9-9596-dfbb_002.jpg 2x" src="Creating%20a%20Neuron%20using%20Code_files/2LEyTvdoiuXT0jlDjleu6TTptdo_034a2931-981e-43d9-9596-dfbb_002.jpg" decoding="async" data-nimg="1" class="_10w3u1b2" loading="lazy" style="color:transparent" width="700" height="55"></div></div></div></div>
-    <div class="slate-column_item _122mapi0" style="--width:50%;
-				--width-float:0.5">
-    <p class="slate-p _1vo7q450" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0"></span></p></div></div></div></div></div></div></div></div></div>
-    <div class="slate-column _1j76um0" style="width:700px;
-				max-width:min(100%, 700px)">
-    <div class="_1j76um4 _1j76um1">
-    <div class="_1j76umd" style="--min-height:auto;
-				--width:700px;
-				--column-width:700px">
-    <div class="slate-column_item _122mapi0" style="--width:50%;
-				--width-float:0.5">
-    <div role="none" class="slate-container card _1bgwy4x9 _1bgwy4x0" style="--min-height:auto;
-				--width:700px;
-				--max-width:min(100%, 700px);
-				background:var(--background-highlight)">
-    <h2 class="slate-h2 ohgk4r2 ohgk4r0" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0">Josh Evans</span></h2>
-    <p class="slate-p _1vo7q450" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0">
-    <em>
-    <strong>
-    <span style="color:var(--text-light)">Teammate</span></strong></em></span></p>
-    <div class="slate-column _1j76um0" style="width:700px;
-				max-width:min(100%, 700px)">
-    <div class="_1j76um4 _1j76um1">
-    <div class="_1j76umd" style="--min-height:auto;
-				--width:700px;
-				--column-width:700px">
-    <div class="slate-column_item _122mapi0" style="--width:50%;
-				--width-float:0.5">
-    <div class="slate-img _10w3u1b0" style="justify-content:center;
-				--max-width:min(100%, 700px)">
-    <div class="_10w3u1b1" style="--width:700px;
-				--height:54.66957946477335px;
-				--aspect-ratio:700 / 54.66957946477335;
-				overflow:hidden;
-				position:relative">
-    <div contenteditable="false">
-        <img 
-            alt="" 
-            srcset="Creating%20a%20Neuron%20using%20Code_files/2LEyTu4d4YmHjTEge0EjcUkfOHK_0baed113-b1da-42ea-b785-bf959274.jpg 1x, Creating%20a%20Neuron%20using%20Code_files/2LEyTu4d4YmHjTEge0EjcUkfOHK_0baed113-b1da-42ea-b785-bf95_002.jpg 2x" 
-            src="Creating%20a%20Neuron%20using%20Code_files/2LEyTu4d4YmHjTEge0EjcUkfOHK_0baed113-b1da-42ea-b785-bf95_002.jpg" 
-            decoding="async" 
-            data-nimg="1" 
-            class="_10w3u1b2" 
-            loading="lazy" 
-            style="color:transparent" 
-            width="700" 
-            height="55"
-        >
-    </div>
-    </div></div></div>
-    <div class="slate-column_item _122mapi0" style="--width:50%;
-                    --width-float:0.5">
+
+        <!-- Background & Motivation Section -->
+        <h2 class="slate-h2 ohgk4r2 ohgk4r0" style="--width:700px;
+                    --max-width:min(100%, 700px)">
+            <span class="_1untytp0">Background & Motivation</span>
+        </h2>
+
+        <!-- Text for Background & Motivation Section -->
+        <p class="slate-p _1vo7q450" style="--width:700px;
+                    --max-width:min(100%, 700px)">
+            <span class="_1untytp0">This is a simulation of the activity of a single neuron using a mathematical model called the 
+                <em>Hodgkin-Huxley Model</em>. This model can accurately represent the excitation and the <em>action potential</em>
+                of a neuron. It can also account for sodium, potassium, and chloride ion concentrations and use those parameters to 
+                drive the excitation of the neuron. In this project, I was able to implement this model in MATLAB, and successfully 
+                simulate (and control) the activity of a neuron.</span>
+        </p>
+
+        <!-- Process Section -->
+        <h2 class="slate-h2 ohgk4r2 ohgk4r0" style="--width:700px;
+                    --max-width:min(100%, 700px)">
+            <span class="_1untytp0">Process</span>
+        </h2>
+
+        <!-- Text for Process Section -->
         <p class="slate-p _1vo7q450" style="--width:700px;
                     --max-width:min(100%, 700px)">
         <span class="_1untytp0"></span></p>
+
+        <!-- Results Section -->
+        <h2 class="slate-h2 ohgk4r2 ohgk4r0" style="--width:700px;
+                    --max-width:min(100%, 700px)">
+            <span class="_1untytp0">Results</span>
+        </h2>
+
+        <!-- Text for Results Section -->
+        <p class="slate-p _1vo7q450" style="--width:700px;
+                    --max-width:min(100%, 700px)">
+        <span class="_1untytp0"></span></p>
+
+        <!-- Contributors Section -->
+        <h2 class="slate-h2 ohgk4r2 ohgk4r0" style="--width:700px;
+                    --max-width:min(100%, 700px)">
+            <span class="_1untytp0">Contributors</span>
+        </h2>
+
+        <!-- First Row of Contributors -->
+        <div class="slate-column _1j76um0" style="width:700px;
+                    max-width:min(100%, 700px)">
+        <div class="_1j76um4 _1j76um1">
+
+        
+        <div class="_1j76umd" style="--min-height:auto;
+                    --width:700px;
+                    --column-width:700px">
+
+            <div class="slate-column_item _122mapi0" style="--width:50%;
+                        --width-float:0.5">
+                <div role="none" class="slate-container card _1bgwy4x9 _1bgwy4x0" style="--min-height:auto;
+                            --width:700px;
+                            --max-width:min(100%, 700px);
+                            background:var(--background-highlight)">
+
+                    <!-- Contributor Name -->
+                    <h2 class="slate-h2 ohgk4r2 ohgk4r0" style="--width:700px;
+                                --max-width:min(100%, 700px)">
+                        <span class="_1untytp0">Andrew Li</span>
+                    </h2>
+
+                    <!-- Contributor Role -->
+                    <p class="slate-p _1vo7q450" style="--width:700px;
+                                --max-width:min(100%, 700px)">
+                        <span class="_1untytp0" style="color:var(--text-light)">
+                            <em><strong>Teammate</strong></em>
+                        </span>
+                    </p>
+
+                    <!-- <div class="slate-column _1j76um0" style="width:700px;
+                                max-width:min(100%, 700px)">
+                    <div class="_1j76um4 _1j76um1">
+                    <div class="_1j76umd" style="--min-height:auto;
+                                --width:700px;
+                                --column-width:700px">
+                    <div class="slate-column_item _122mapi0" style="--width:50%;
+                                --width-float:0.5">
+                    <div class="slate-img _10w3u1b0" style="justify-content:center;
+                                --max-width:min(100%, 700px)">
+                    <div class="_10w3u1b1" style="--width:700px;
+                                --height:54.66957946477335px;
+                                --aspect-ratio:700 / 54.66957946477335;
+                                overflow:hidden;
+                                position:relative">
+                    <div contenteditable="false">
+                    <img alt="" srcset="resources/2LEyTt5SBaoHJ5pBwljjstIUAmj_7ed3888f-cd15-4d56-8a81-038ba1a3.jpg 1x, resources/2LEyTt5SBaoHJ5pBwljjstIUAmj_7ed3888f-cd15-4d56-8a81-038b_002.jpg 2x" src="resources/2LEyTt5SBaoHJ5pBwljjstIUAmj_7ed3888f-cd15-4d56-8a81-038b_002.jpg" decoding="async" data-nimg="1" class="_10w3u1b2" loading="lazy" style="color:transparent" width="700" height="55">
+                    </div>
+                    </div>
+                    </div></div>
+                    <div class="slate-column_item _122mapi0" style="--width:50%;
+                                --width-float:0.5">
+                    <p class="slate-p _1vo7q450" style="--width:700px;
+                                --max-width:min(100%, 700px)">
+                    <span class="_1untytp0"></span></p></div></div></div></div> -->
+                </div>
+            </div>
+
+            <div class="slate-column_item _122mapi0" style="--width:50%;
+                        --width-float:0.5">
+                <div role="none" class="slate-container card _1bgwy4x9 _1bgwy4x0" style="--min-height:auto;
+                            --width:700px;
+                            --max-width:min(100%, 700px);
+                            background:var(--background-highlight)">
+
+                    <!-- Contributor Name -->
+                    <h2 class="slate-h2 ohgk4r2 ohgk4r0" style="--width:700px;
+                                --max-width:min(100%, 700px)">
+                        <span class="_1untytp0">Harry Zou</span>
+                    </h2>
+
+                    <!-- Contributor Role -->
+                    <p class="slate-p _1vo7q450" style="--width:700px;
+                                --max-width:min(100%, 700px)">
+                        <span class="_1untytp0" style="color:var(--text-light)">
+                            <em><strong>Teammate</strong></em>
+                        </span>
+                    </p>
+
+                    <!-- <div class="slate-column _1j76um0" style="width:700px;
+                                max-width:min(100%, 700px)">
+                    <div class="_1j76um4 _1j76um1">
+                    <div class="_1j76umd" style="--min-height:auto;
+                                --width:700px;
+                                --column-width:700px">
+                    <div class="slate-column_item _122mapi0" style="--width:50%;
+                                --width-float:0.5">
+                    <div class="slate-img _10w3u1b0" style="justify-content:center;
+                                --max-width:min(100%, 700px)">
+                    <div class="_10w3u1b1" style="--width:700px;
+                                --height:54.66957946477335px;
+                                --aspect-ratio:700 / 54.66957946477335;
+                                overflow:hidden;
+                                position:relative">
+                    <div contenteditable="false">
+                    <img alt="" srcset="resources/2LEyTvdoiuXT0jlDjleu6TTptdo_034a2931-981e-43d9-9596-dfbb43fa.jpg 1x, resources/2LEyTvdoiuXT0jlDjleu6TTptdo_034a2931-981e-43d9-9596-dfbb_002.jpg 2x" src="resources/2LEyTvdoiuXT0jlDjleu6TTptdo_034a2931-981e-43d9-9596-dfbb_002.jpg" decoding="async" data-nimg="1" class="_10w3u1b2" loading="lazy" style="color:transparent" width="700" height="55"></div></div></div></div>
+                    <div class="slate-column_item _122mapi0" style="--width:50%;
+                                --width-float:0.5">
+                    <p class="slate-p _1vo7q450" style="--width:700px;
+                                --max-width:min(100%, 700px)">
+                    <span class="_1untytp0"></span></p></div></div></div></div> -->
+                </div>
+            </div>
+
+        </div></div>
+        </div>
+
+        <!-- Second Row of Contributors -->
+        <div class="slate-column _1j76um0" style="width:700px;
+                    max-width:min(100%, 700px)">
+        <div class="_1j76um4 _1j76um1">
+
+        
+        <div class="_1j76umd" style="--min-height:auto;
+                    --width:700px;
+                    --column-width:700px">
+
+            <div class="slate-column_item _122mapi0" style="--width:50%;
+                        --width-float:0.5">
+                <div role="none" class="slate-container card _1bgwy4x9 _1bgwy4x0" style="--min-height:auto;
+                            --width:700px;
+                            --max-width:min(100%, 700px);
+                            background:var(--background-highlight)">
+
+                    <!-- Contributor Name -->
+                    <h2 class="slate-h2 ohgk4r2 ohgk4r0" style="--width:700px;
+                                --max-width:min(100%, 700px)">
+                        <span class="_1untytp0">Andrew Li</span>
+                    </h2>
+
+                    <!-- Contributor Role -->
+                    <p class="slate-p _1vo7q450" style="--width:700px;
+                                --max-width:min(100%, 700px)">
+                        <span class="_1untytp0" style="color:var(--text-light)">
+                            <em><strong>Teammate</strong></em>
+                        </span>
+                    </p>
+
+                    <!-- <div class="slate-column _1j76um0" style="width:700px;
+                                max-width:min(100%, 700px)">
+                    <div class="_1j76um4 _1j76um1">
+                    <div class="_1j76umd" style="--min-height:auto;
+                                --width:700px;
+                                --column-width:700px">
+                    <div class="slate-column_item _122mapi0" style="--width:50%;
+                                --width-float:0.5">
+                    <div class="slate-img _10w3u1b0" style="justify-content:center;
+                                --max-width:min(100%, 700px)">
+                    <div class="_10w3u1b1" style="--width:700px;
+                                --height:54.66957946477335px;
+                                --aspect-ratio:700 / 54.66957946477335;
+                                overflow:hidden;
+                                position:relative">
+                    <div contenteditable="false">
+                    <img alt="" srcset="resources/2LEyTt5SBaoHJ5pBwljjstIUAmj_7ed3888f-cd15-4d56-8a81-038ba1a3.jpg 1x, resources/2LEyTt5SBaoHJ5pBwljjstIUAmj_7ed3888f-cd15-4d56-8a81-038b_002.jpg 2x" src="resources/2LEyTt5SBaoHJ5pBwljjstIUAmj_7ed3888f-cd15-4d56-8a81-038b_002.jpg" decoding="async" data-nimg="1" class="_10w3u1b2" loading="lazy" style="color:transparent" width="700" height="55">
+                    </div>
+                    </div>
+                    </div></div>
+                    <div class="slate-column_item _122mapi0" style="--width:50%;
+                                --width-float:0.5">
+                    <p class="slate-p _1vo7q450" style="--width:700px;
+                                --max-width:min(100%, 700px)">
+                    <span class="_1untytp0"></span></p></div></div></div></div> -->
+                </div>
+            </div>
+
+            <div class="slate-column_item _122mapi0" style="--width:50%;
+                        --width-float:0.5">
+                <div role="none" class="slate-container card _1bgwy4x9 _1bgwy4x0" style="--min-height:auto;
+                            --width:700px;
+                            --max-width:min(100%, 700px);
+                            background:var(--background-highlight)">
+
+                    <!-- Contributor Name -->
+                    <h2 class="slate-h2 ohgk4r2 ohgk4r0" style="--width:700px;
+                                --max-width:min(100%, 700px)">
+                        <span class="_1untytp0">Harry Zou</span>
+                    </h2>
+
+                    <!-- Contributor Role -->
+                    <p class="slate-p _1vo7q450" style="--width:700px;
+                                --max-width:min(100%, 700px)">
+                        <span class="_1untytp0" style="color:var(--text-light)">
+                            <em><strong>Teammate</strong></em>
+                        </span>
+                    </p>
+
+                    <!-- <div class="slate-column _1j76um0" style="width:700px;
+                                max-width:min(100%, 700px)">
+                    <div class="_1j76um4 _1j76um1">
+                    <div class="_1j76umd" style="--min-height:auto;
+                                --width:700px;
+                                --column-width:700px">
+                    <div class="slate-column_item _122mapi0" style="--width:50%;
+                                --width-float:0.5">
+                    <div class="slate-img _10w3u1b0" style="justify-content:center;
+                                --max-width:min(100%, 700px)">
+                    <div class="_10w3u1b1" style="--width:700px;
+                                --height:54.66957946477335px;
+                                --aspect-ratio:700 / 54.66957946477335;
+                                overflow:hidden;
+                                position:relative">
+                    <div contenteditable="false">
+                    <img alt="" srcset="resources/2LEyTvdoiuXT0jlDjleu6TTptdo_034a2931-981e-43d9-9596-dfbb43fa.jpg 1x, resources/2LEyTvdoiuXT0jlDjleu6TTptdo_034a2931-981e-43d9-9596-dfbb_002.jpg 2x" src="resources/2LEyTvdoiuXT0jlDjleu6TTptdo_034a2931-981e-43d9-9596-dfbb_002.jpg" decoding="async" data-nimg="1" class="_10w3u1b2" loading="lazy" style="color:transparent" width="700" height="55"></div></div></div></div>
+                    <div class="slate-column_item _122mapi0" style="--width:50%;
+                                --width-float:0.5">
+                    <p class="slate-p _1vo7q450" style="--width:700px;
+                                --max-width:min(100%, 700px)">
+                    <span class="_1untytp0"></span></p></div></div></div></div> -->
+                </div>
+            </div>
+
+        </div></div>
+        </div>
+
     </div>
-    </div></div></div></div></div>
-    <div class="slate-column_item _122mapi0" style="--width:50%;
-				--width-float:0.5">
-    <div role="none" class="slate-container card _1bgwy4x9 _1bgwy4x0" style="--min-height:auto;
-				--width:700px;
-				--max-width:min(100%, 700px);
-				background:var(--background-highlight)">
-    <h2 class="slate-h2 ohgk4r2 ohgk4r0" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0">Justin Schumacher</span></h2>
-    <p class="slate-p _1vo7q450" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0">
-    <em>
-    <strong>
-    <span style="color:var(--text-light)">BIOE340 TA</span></strong></em></span></p>
-    <div class="slate-column _1j76um0" style="width:700px;
-				max-width:min(100%, 700px)">
-    <div class="_1j76um4 _1j76um1">
-    <div class="_1j76umd" style="--min-height:auto;
-				--width:700px;
-				--column-width:700px">
-    <div class="slate-column_item _122mapi0" style="--width:50%;
-				--width-float:0.5">
-    <div class="slate-img _10w3u1b0" style="justify-content:center;
-				--max-width:min(100%, 700px)">
-    <div class="_10w3u1b1" style="--width:700px;
-				--height:54.66957946477335px;
-				--aspect-ratio:700 / 54.66957946477335;
-				overflow:hidden;
-				position:relative">
-    <div contenteditable="false">
-    <img alt="" srcset="Creating%20a%20Neuron%20using%20Code_files/2LEyTthQELO5NUz1A5EZ52fsNVI_c323bd7c-ccc7-476a-8e0f-fc9716f3.jpg 1x, Creating%20a%20Neuron%20using%20Code_files/2LEyTthQELO5NUz1A5EZ52fsNVI_c323bd7c-ccc7-476a-8e0f-fc97_002.jpg 2x" src="Creating%20a%20Neuron%20using%20Code_files/2LEyTthQELO5NUz1A5EZ52fsNVI_c323bd7c-ccc7-476a-8e0f-fc97_002.jpg" decoding="async" data-nimg="1" class="_10w3u1b2" loading="lazy" style="color:transparent" width="700" height="55"></div></div></div></div>
-    <div class="slate-column_item _122mapi0" style="--width:50%;
-				--width-float:0.5">
-    <p class="slate-p _1vo7q450" style="--width:700px;
-				--max-width:min(100%, 700px)">
-    <span class="_1untytp0"></span></p></div></div></div></div></div></div></div></div></div></div>
+
+    
     <p class="slate-p _1vo7q450" style="--width:700px;
 				--max-width:min(100%, 700px)">
     <span class="_1untytp0"></span></p>
     <div class="slate-divider c7sewk0" style="max-width:100%;
 				width:1000px">
     <hr class="c7sewk1" contenteditable="false"></div>
+
+    <!--  Footer-->
     <div role="none" class="slate-container _1bgwy4x2 _1bgwy4x9 _1bgwy4x0" style="--min-height:auto;
 				--width:100%;
 				--max-width:100%;
@@ -1023,23 +1116,22 @@
     <span class="_1untytp0">
     <span style="color:var(--text-light);
 				--font-size:13px;
-				--mobile-font-size:13px">Copyright&nbsp;
-				©&nbsp;
-				2023&nbsp;
-				Mihir Modak</span></span></p>
+				--mobile-font-size:13px">Copyright © 2023 Mihir Modak</span></span></p>
     <p class="slate-p _1vo7q450" style="--width:700px;
 				--max-width:min(100%, 700px);
 				text-align:center">
     <span class="_1untytp0">
     <span style="color:var(--text-light);
 				--font-size:13px;
-				--mobile-font-size:13px"></span></span></p></div>
-    <p class="slate-p _1vo7q450" style="--width:700px;
+				--mobile-font-size:13px"></span></span></p>
+    </div>
+    <!-- <p class="slate-p _1vo7q450" style="--width:700px;
 				--max-width:min(100%, 700px)">
-    <span class="_1untytp0"></span></p></div>
-    <!--/$--></div>
-    <script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"id":"www.mihir-modak.com/my-projects/creating-a-neuron-using-code","key":"www.mihir-modak.com/my-projects/creating-a-neuron-using-code","space":{"custom_domain":"www.mihir-modak.com","icon":"https://api.typedream.com/v0/document/public/3be3aa6e-3d86-4746-acfe-3138a655a388/2LF1WoIbrVeraxnVUei3TsMe596_mihir.png","id":"3be3aa6e-3d86-4746-acfe-3138a655a388","metadata":{"site_type":"portfolio"},"name":"Personal Portfolio","slug":"mihirmodak","routes":{"page_id":"9b8bb901-76e1-48e0-82fb-ff1691eed15b","children_keys":["my-projects"],"children":{"my-projects":{"page_id":"35ac180e-6a4c-4ae8-b793-ba82e8df0b28","children_keys":null,"children":null,"children_template_page_id":"002228fb-8209-4940-af83-ef95cc69e54b"}},"children_template_page_id":"00000000-0000-0000-0000-000000000000"},"subscription":{"id":"00000000-0000-0000-0000-000000000000","created_at":"0001-01-01T00:00:00Z","updated_at":"0001-01-01T00:00:00Z","deleted_at":"0001-01-01T00:00:00Z","space_id":"00000000-0000-0000-0000-000000000000","status":"active","price_id":"","product_id":"prod_L09HUaSFt1FS0W","customer_id":"","subscription_id":"","metadata":{"affiliate":false,"analytics_activated":false,"analytics_timezone":"","cancel_at":0,"cancel_at_period_end":false,"current_period_end":1680273842,"current_period_start":1677595442,"discount":null,"subscription":{"cycle":"month","price":2500,"price_1ILQxNKqrvH8BszmLfET99Mw":"si_NGspTW0IH0iq3x","price_1KK8yjKqrvH8BszmNG1y8HbF":"si_NGspTW0IH0iq3x"},"subscription_created":1675176242,"subscription_start_date":1675176242,"subscription_status":"active","trial_end":0,"trial_start":0}},"customization":{"theme":"light","enable_theme_toggle":false,"collection_item_data":{"notion_b6afe9b4-1e5a-4591-8794-38d3e28c5010":{"childrenTemplatePageID":"002228fb-8209-4940-af83-ef95cc69e54b","integration":"notion","tableID":"b6afe9b4-1e5a-4591-8794-38d3e28c5010"}}},"published_navbar":null},"page":{"id":"002228fb-8209-4940-af83-ef95cc69e54b","name":"Projects","metadata":null,"published_content":[{"children":[{"children":[{"id":"8575ae00-9f19-4d3a-a0bc-4b4721363526","text":""}],"height":70,"id":"61ce2350-f368-408d-96bb-d39051008c18","type":"spacer"},{"children":[{"collection_connect_data":true,"collection_connect_data_keys":[{"blockElementKey":"text","schemaKey":"title"}],"id":"0758b1b3-95b8-45e8-b5fc-6719658f2647","text":"Creating a Neuron using Code"}],"collection_connect_data":true,"collection_connect_data_keys":[],"id":"e8bf2322-526f-43a5-ac58-b7f848d9afd4","openOptions":false,"type":"h1"},{"children":[{"collection_connect_data":true,"collection_connect_data_keys":[{"blockElementKey":"text","schemaKey":"author"}],"color":"gray","fontSize":16,"fontStyle":"subtitle3","id":"c273f637-a8fe-4f1c-a390-0e60b8c15944","styled":true,"text":"Mihir Modak"},{"color":"gray","fontSize":16,"fontStyle":"subtitle3","id":"a3c298a1-e246-4854-bb5c-bc8940f4e741","styled":true,"text":" • "},{"collection_connect_data":true,"collection_connect_data_keys":[{"blockElementKey":"text","schemaKey":"date"}],"color":"gray","fontSize":16,"fontStyle":"subtitle3","id":"cb60e49a-6836-4f2d-b5c4-82f5de5b1570","styled":true,"text":""}],"collection_connect_data":true,"collection_connect_data_keys":[],"id":"8619c1dc-024a-4acf-9a54-12c025d2b383","type":"p"},{"children":[{"id":"b7f75c76-7689-4b45-991a-3ff488e090b8","text":""}],"id":"fab419b6-01ec-4956-8540-693cb8f0668d","type":"p"},{"children":[{"collection_connect_data":true,"collection_connect_data_keys":[{"blockElementKey":"text","schemaKey":"snippet"}],"color":"gray","fontSize":20,"fontStyle":"subtitle2","id":"fae60706-eb54-4516-879b-a2da49e43c82","lineHeight":1.4,"styled":true,"text":""}],"collection_connect_data":true,"collection_connect_data_keys":[],"id":"ae837d8a-45dc-475f-b36e-44bbab5337db","type":"p"},{"children":[{"id":"43be58a7-362b-4f21-a1b4-ed0202ef97fa","text":""}],"id":"4f2c2372-881d-4331-972a-78aa9bacc26c","type":"p"},{"aspect_ratio":1.8449612403100775,"children":[{"id":"9808e66c-ed41-4561-a6e0-711e7cbe8513","text":""}],"collection_connect_data":true,"collection_connect_data_keys":[{"blockElementKey":"url","schemaKey":"cover"}],"height":435.95680147058823,"id":"873b7af1-1a9f-4925-bfd5-920d34b8a7dd","openOptions":false,"type":"img","url":"https://s3.us-west-2.amazonaws.com/secure.notion-static.com/541056f6-d467-4d17-93d9-07b58945e88b/images.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Content-Sha256=UNSIGNED-PAYLOAD\u0026X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230302%2Fus-west-2%2Fs3%2Faws4_request\u0026X-Amz-Date=20230302T150251Z\u0026X-Amz-Expires=3600\u0026X-Amz-Signature=e586fc1c363d4fbc9a4bd7dcda9bfa3d82654250210658c6337ffa516e3ba051\u0026X-Amz-SignedHeaders=host\u0026x-id=GetObject","width":804.3234011627907},{"children":[{"id":"870f9e5a-92d3-41f5-9b8b-6cc042032f60","text":""}],"id":"dc19cfc1-73da-4a44-b588-3f4377a442cd","type":"p"},{"children":[{"id":"dda8e0ed-a78a-4a9e-a1f7-3738527ad6bc","type":"h2","children":[{"id":"17a4c56c-ec8e-433e-bc4b-d398daee8a0d","text":"Background \u0026 Motivation","styled":false}]},{"id":"bc4f374e-1341-4891-9129-61d77b12c311","type":"p","children":[{"id":"03380053-8e3c-4f63-a5db-215cf046b71c","text":"This is a simulation of the activity of a single neuron using a mathematical model called the ","styled":false},{"id":"4e61b2fb-7aad-4044-b7b0-dc81d74c9fcc","text":"Hodgkin-Huxley Model","italic":true,"styled":false},{"id":"24ca2139-2137-4947-a230-5cc621c81b7a","text":". This model can accurately represent the excitation and the ","styled":false},{"id":"9f2c6a8b-3e3d-412b-9a9a-7e3eea5cbdd8","text":"action potential","italic":true,"styled":false},{"id":"bfb86cd1-2100-46c1-a36d-93f3b64a208c","text":" of a neuron. It can also account for sodium, potassium, and chloride ion concentrations and use those parameters to drive the excitation of the neuron. In this project, I was able to implement this model in MATLAB, and successfully simulate (and control) the activity of a neuron.","styled":false}]},{"id":"f70e9288-571b-4694-bcb2-a46a6d4dc2bb","type":"h2","children":[{"id":"85c0706f-4677-4f5e-aa6f-dc5a11b4e20f","text":"Process","styled":false}]},{"id":"6ff3a924-be35-4a1a-9b0f-41d5dfeb9750","type":"p","children":[{"text":"","id":"43a51795-82ea-496b-a484-761bc21a887d"}]},{"id":"015dd5e0-1236-4494-a981-298df2158a0a","type":"h2","children":[{"id":"fd55bef9-b3da-4432-8203-8c1c97123532","text":"Results","styled":false}]},{"id":"5590c010-f6e3-4205-8ac3-5c7e254c91f1","type":"p","children":[{"text":"","id":"b018bb28-c2ab-4c16-af89-aaccf3003f33"}]},{"id":"6e3fd8b1-0d05-44e4-9942-3337aa19743a","type":"h2","children":[{"id":"a2246c61-e768-443e-9b9f-c0c0a87e6d9a","text":"Contributors","styled":false}]},{"id":"5eedf1ee-aa51-4f18-8ec5-5917e80eb6ef","type":"column","children":[{"id":"2ad52291-82bd-496d-8ce8-8b9a801ab09f","type":"column_item","children":[{"id":"e5d513b6-762b-425a-8725-7dc9d98346fb","type":"container","children":[{"id":"cb82f620-28dd-45ea-878c-0b6d54c25838","type":"h2","children":[{"id":"a6bf698c-d40b-4ab3-abc2-0621f50939c3","text":"Harry Zou","styled":false}]},{"id":"975e1924-0b24-44cc-a8b1-20e171f52d58","type":"p","children":[{"id":"22a382aa-a35c-4ca8-945a-5aaadba4a0ba","text":"Teammate","bold":true,"italic":true,"color":"gray","styled":true}]},{"id":"1fc8a146-9a8c-4a8a-ad3c-441c5abc775b","type":"column","children":[{"id":"ca05ef39-e7be-46c8-b148-cd51f5d58c4c","type":"column_item","children":[{"id":"6e757d83-6a7f-4582-a9a9-2b984a692d13","type":"img","children":[{"text":"","id":"dcddf51d-4bd4-4d8b-92dc-ccc13610a249"}],"url":"https://api.typedream.com/v0/document/public/3be3aa6e-3d86-4746-acfe-3138a655a388/2LEyTt5SBaoHJ5pBwljjstIUAmj_7ed3888f-cd15-4d56-8a81-038ba1a37118","width":700,"height":54.66957946477335,"aspect_ratio":12.804195804195803}],"width":0.5},{"id":"8d6a8a22-7a7a-48fc-a8ed-1bbe8f86ea5a","type":"column_item","children":[{"id":"d6491ce4-f06b-47aa-97a7-08450f3ac350","type":"p","children":[{"text":"","id":"8a3b9815-5206-4322-88c4-8f5fbcb8fc52"}]}],"width":0.5}]}],"style":"card","background":"gray"}],"width":0.5},{"id":"2f6a4f59-d16c-4063-8e07-8160cc4114c8","type":"column_item","children":[{"id":"7dab946c-94ba-4a9c-956d-4b1de06f501d","type":"container","children":[{"id":"cffe41dd-037a-447c-9724-9fcb16cccf1b","type":"h2","children":[{"id":"eaa7dfae-3eaf-41bd-ae4a-bb5bebc4ece5","text":"Andrew Li","styled":false}]},{"id":"f0c334cd-1f6a-45d3-b62c-51c59874fa9c","type":"p","children":[{"id":"17e6670e-0e33-442a-b723-75c5f1a5bbf3","text":"Teammate","bold":true,"italic":true,"color":"gray","styled":true}]},{"id":"27e12ed5-c9b9-45c9-af2f-4b55fe630652","type":"column","children":[{"id":"1788427e-0672-44f4-884d-33c6d6ee5e9c","type":"column_item","children":[{"id":"f7357e1a-06ac-41cc-9199-ee4087971c77","type":"img","children":[{"text":"","id":"899a12d7-9100-45ea-aece-039fd712e141"}],"url":"https://api.typedream.com/v0/document/public/3be3aa6e-3d86-4746-acfe-3138a655a388/2LEyTvdoiuXT0jlDjleu6TTptdo_034a2931-981e-43d9-9596-dfbb43fa2d24","width":700,"height":54.66957946477335,"aspect_ratio":12.804195804195803}],"width":0.5},{"id":"623cc001-a1cb-4f4e-acae-c071f2768646","type":"column_item","children":[{"id":"77b65e51-2b49-44d2-82df-a2c2e356e773","type":"p","children":[{"text":"","id":"6427ef6e-8f4f-4031-b239-1a6037aaaa32"}]}],"width":0.5}]}],"style":"card","background":"gray"}],"width":0.5}]},{"id":"8f7f569d-002a-4628-af07-bcbba0a4b7b6","type":"column","children":[{"id":"ea3d9266-8045-4847-99f0-5563467b8740","type":"column_item","children":[{"id":"e6caf6c5-b1df-4f75-beac-98655850903a","type":"container","children":[{"id":"3ecb3501-6168-4596-8e8f-4533fe1b0ea7","type":"h2","children":[{"id":"f0859a69-fa52-4d04-a4fc-89cc2e5694b0","text":"Josh Evans","styled":false}]},{"id":"f74a0a9e-d580-40d0-a35d-4b168d0a9eca","type":"p","children":[{"id":"84b1bff3-cff8-4c06-af95-7ba579c813b2","text":"Teammate","bold":true,"italic":true,"color":"gray","styled":true}]},{"id":"0f10f571-0b6f-4579-b129-574c0852659a","type":"column","children":[{"id":"11800f64-59f6-42f0-af96-22b7467dbfe8","type":"column_item","children":[{"id":"6c17a617-d119-48c7-96e9-d3738cc7f8a6","type":"img","children":[{"text":"","id":"1b105ff3-0c40-491e-8624-030955ee8375"}],"url":"https://api.typedream.com/v0/document/public/3be3aa6e-3d86-4746-acfe-3138a655a388/2LEyTu4d4YmHjTEge0EjcUkfOHK_0baed113-b1da-42ea-b785-bf959274c01b","width":700,"height":54.66957946477335,"aspect_ratio":12.804195804195803}],"width":0.5},{"id":"8a00e9cf-e45a-467b-94d5-4a39c4e18911","type":"column_item","children":[{"id":"ab753039-7eef-4cf1-be0b-11ba9c4d5d3a","type":"p","children":[{"text":"","id":"9d0ab031-ad78-484d-a756-05534954baca"}]}],"width":0.5}]}],"style":"card","background":"gray"}],"width":0.5},{"id":"1a2e1d50-3b8f-44f8-acb9-dc783a3bf41e","type":"column_item","children":[{"id":"6347a792-7e9b-4298-ad44-492232748e4a","type":"container","children":[{"id":"ac5f7062-9970-4266-9f3e-5a8e99833b72","type":"h2","children":[{"id":"701abb13-eedd-43b5-85ac-7bd37d82aa62","text":"Justin Schumacher","styled":false}]},{"id":"660afb4e-2a70-4f47-9550-e8c982673d6c","type":"p","children":[{"id":"0448f8cf-a27c-4ae4-a870-e41f4d355004","text":"BIOE340 TA","bold":true,"italic":true,"color":"gray","styled":true}]},{"id":"6f0b57e7-883f-4df1-8fe7-a5e308fb251b","type":"column","children":[{"id":"42769490-95ce-40f8-9aba-dba00976bbb3","type":"column_item","children":[{"id":"d488300a-314e-4810-8233-6e96c8ebd8db","type":"img","children":[{"text":"","id":"e357db78-9316-4150-949f-9d131485777f"}],"url":"https://api.typedream.com/v0/document/public/3be3aa6e-3d86-4746-acfe-3138a655a388/2LEyTthQELO5NUz1A5EZ52fsNVI_c323bd7c-ccc7-476a-8e0f-fc9716f37ea2","width":700,"height":54.66957946477335,"aspect_ratio":12.804195804195803}],"width":0.5},{"id":"d33920cf-a17a-4a40-9b41-483697bdcf32","type":"column_item","children":[{"id":"912ada51-09c6-42c2-8753-ea6757aca020","type":"p","children":[{"text":"","id":"71d54499-584f-4ae8-85cf-ff50e7d6f799"}]}],"width":0.5}]}],"style":"card","background":"gray"}],"width":0.5}]}],"id":"ac8973ae-9041-4f6a-aff7-378ecf60b833","openOptions":false,"type":"rich_text_content","width":700},{"children":[{"id":"7f40465e-d0a4-420d-94ef-c4454654fdb5","text":""}],"id":"ae9830ca-bab2-4641-8f0e-40449171b8b8","openOptions":false,"optionIndex":1,"type":"p"},{"children":[{"id":"f2266873-2241-4b3e-8a4f-95e30e8491c0","text":""}],"id":"b656c755-3cbf-43ba-936b-7840d9d3a407","openOptions":false,"optionIndex":1,"type":"divider","width":1000},{"align":"align_center","background":"default","children":[{"children":[{"color":"gray","fontSize":13,"fontStyle":"small","gradient":false,"styled":true,"text":"","id":"88f0e3f4-ace3-4cd3-aa07-288c5c1f999e"}],"id":"cceddd5e-7692-424e-9be6-ba718da7a45c","type":"divider","width":2000},{"align":"align_center","children":[{"children":[{"align":"align_left","background":"default","children":[{"text":"","id":"725fa9ee-5ed5-4a0b-97e1-c03f8029fd71"}],"color":"default","gradient":false,"icon":{"content":{"color":"default","name":"github","type":"logo"},"type":"icon"},"id":"2bd6661a-ab67-4cb3-ae26-91d4ae5339fe","internal_link":false,"open_in_new_tab":true,"type":"button","url":"https://github.com/mihirmodak"}],"id":"56ea75a9-3112-4675-a204-d0870f939b3a","type":"column_item","width":0.125},{"children":[{"align":"align_left","background":"default","children":[{"text":"","id":"c51edf58-2111-4e9f-b4ac-3a2b1ff861bc"}],"color":"default","gradient":false,"icon":{"content":{"color":"default","name":"linkedin-square","type":"logo"},"type":"icon"},"id":"fb69ff47-eb9b-4f9a-9f3f-ac9c8b3a8639","internal_link":false,"open_in_new_tab":true,"type":"button","url":"https://www.linkedin.com/in/mihir-modak/"}],"id":"832cc506-5ba0-466a-985a-32078f907392","type":"column_item","width":0.12502603530883788},{"children":[{"align":"align_left","background":"default","children":[{"text":"","id":"a12f0623-7704-4655-812c-6b22302af6d7"}],"color":"default","gradient":false,"icon":{"content":{"color":"default","name":"food-menu","type":"regular"},"type":"icon"},"id":"6aef71c3-86f0-4ae5-abb9-cef59d79d785","internal_link":false,"open_in_new_tab":true,"type":"button","url":"https://1drv.ms/b/s!ApOEOvPnvhLAjtZJ2pz83mHzuuD3TA?e=sHg6Iq"}],"id":"dc9005b3-f14e-48fb-b847-31539a8c1f0d","type":"column_item","width":0.11874999999999988}],"id":"f8e91ede-cbdf-4291-8f60-557b2eb50e39","type":"column"},{"align":"align_center","children":[{"color":"gray","fontSize":13,"fontStyle":"small","gradient":false,"styled":true,"text":"Copyright © 2023 Mihir Modak","id":"7fb0386d-8003-49ab-aa47-883d6e703885"}],"id":"1e8f4b8a-d5f4-4a01-a915-d0a7e9b5a214","type":"p"},{"align":"align_center","children":[{"color":"gray","fontSize":13,"fontStyle":"small","gradient":false,"styled":true,"text":"","id":"cdac3e77-ed50-4ade-9e6e-4d1ad0f1ed07"}],"id":"be6e8ab2-a3ca-49ba-ab2e-d272081917fc","type":"p"}],"id":"dde80f85-8b62-4993-abe0-6966fb00a9ab","openOptions":false,"transclusion_enabled":true,"transclusion_reference_id":"1e41d125-e967-474f-a585-7fb2de1dfa13","transclusion_updated_at":1675451281181,"type":"container","name":"Footer","width_max":"100%"},{"children":[{"id":"f1de8ff8-70d1-4846-a07c-e26d61db93ca","text":""}],"id":"47cf3285-3bee-4430-b6df-2bd6cfa6d74f","openOptions":false,"type":"p"}],"id":"bfd5d30a-c363-46ad-b1f0-13f96d6376df","type":"root","vertical_align":"align_start"}],"customization":{"collection_data":{},"item_page_data":{"contentSchema":{"author":"Author","cover":"Cover","date":"Date","snippet":"Snippet","title":"Name"},"contentSchemaOrder":["title","author","cover","snippet","date"],"integration":"notion","pageSchema":{"content":"TD:page_content","metadata":"TD:metadata","name":"Name","published_content":"TD:page_content_published","slug":"TD:slug"},"tableID":"b6afe9b4-1e5a-4591-8794-38d3e28c5010","templateSelected":true,"data":{"Cover":"https://s3.us-west-2.amazonaws.com/secure.notion-static.com/541056f6-d467-4d17-93d9-07b58945e88b/images.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Content-Sha256=UNSIGNED-PAYLOAD\u0026X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230302%2Fus-west-2%2Fs3%2Faws4_request\u0026X-Amz-Date=20230302T150251Z\u0026X-Amz-Expires=3600\u0026X-Amz-Signature=e586fc1c363d4fbc9a4bd7dcda9bfa3d82654250210658c6337ffa516e3ba051\u0026X-Amz-SignedHeaders=host\u0026x-id=GetObject","Publish Date":"2023-03-02 01:33","TD:page_content":[{"children":[{"id":"dda8e0ed-a78a-4a9e-a1f7-3738527ad6bc","type":"h2","children":[{"id":"17a4c56c-ec8e-433e-bc4b-d398daee8a0d","text":"Background \u0026 Motivation","styled":false}]},{"id":"bc4f374e-1341-4891-9129-61d77b12c311","type":"p","children":[{"id":"03380053-8e3c-4f63-a5db-215cf046b71c","text":"This is a simulation of the activity of a single neuron using a mathematical model called the ","styled":false},{"id":"4e61b2fb-7aad-4044-b7b0-dc81d74c9fcc","text":"Hodgkin-Huxley Model","italic":true,"styled":false},{"id":"24ca2139-2137-4947-a230-5cc621c81b7a","text":". This model can accurately represent the excitation and the ","styled":false},{"id":"9f2c6a8b-3e3d-412b-9a9a-7e3eea5cbdd8","text":"action potential","italic":true,"styled":false},{"id":"bfb86cd1-2100-46c1-a36d-93f3b64a208c","text":" of a neuron. It can also account for sodium, potassium, and chloride ion concentrations and use those parameters to drive the excitation of the neuron. In this project, I was able to implement this model in MATLAB, and successfully simulate (and control) the activity of a neuron.","styled":false}]},{"id":"f70e9288-571b-4694-bcb2-a46a6d4dc2bb","type":"h2","children":[{"id":"85c0706f-4677-4f5e-aa6f-dc5a11b4e20f","text":"Process","styled":false}]},{"id":"6ff3a924-be35-4a1a-9b0f-41d5dfeb9750","type":"p","children":[{"text":"","id":"43a51795-82ea-496b-a484-761bc21a887d"}]},{"id":"015dd5e0-1236-4494-a981-298df2158a0a","type":"h2","children":[{"id":"fd55bef9-b3da-4432-8203-8c1c97123532","text":"Results","styled":false}]},{"id":"5590c010-f6e3-4205-8ac3-5c7e254c91f1","type":"p","children":[{"text":"","id":"b018bb28-c2ab-4c16-af89-aaccf3003f33"}]},{"id":"6e3fd8b1-0d05-44e4-9942-3337aa19743a","type":"h2","children":[{"id":"a2246c61-e768-443e-9b9f-c0c0a87e6d9a","text":"Contributors","styled":false}]},{"id":"5eedf1ee-aa51-4f18-8ec5-5917e80eb6ef","type":"column","children":[{"id":"2ad52291-82bd-496d-8ce8-8b9a801ab09f","type":"column_item","children":[{"id":"e5d513b6-762b-425a-8725-7dc9d98346fb","type":"container","children":[{"id":"cb82f620-28dd-45ea-878c-0b6d54c25838","type":"h2","children":[{"id":"a6bf698c-d40b-4ab3-abc2-0621f50939c3","text":"Harry Zou","styled":false}]},{"id":"975e1924-0b24-44cc-a8b1-20e171f52d58","type":"p","children":[{"id":"22a382aa-a35c-4ca8-945a-5aaadba4a0ba","text":"Teammate","bold":true,"italic":true,"color":"gray","styled":true}]},{"id":"1fc8a146-9a8c-4a8a-ad3c-441c5abc775b","type":"column","children":[{"id":"ca05ef39-e7be-46c8-b148-cd51f5d58c4c","type":"column_item","children":[{"id":"6e757d83-6a7f-4582-a9a9-2b984a692d13","type":"img","children":[{"text":"","id":"dcddf51d-4bd4-4d8b-92dc-ccc13610a249"}],"url":"https://api.typedream.com/v0/document/public/3be3aa6e-3d86-4746-acfe-3138a655a388/2LEyTt5SBaoHJ5pBwljjstIUAmj_7ed3888f-cd15-4d56-8a81-038ba1a37118","width":700,"height":54.66957946477335,"aspect_ratio":12.804195804195803}],"width":0.5},{"id":"8d6a8a22-7a7a-48fc-a8ed-1bbe8f86ea5a","type":"column_item","children":[{"id":"d6491ce4-f06b-47aa-97a7-08450f3ac350","type":"p","children":[{"text":"","id":"8a3b9815-5206-4322-88c4-8f5fbcb8fc52"}]}],"width":0.5}]}],"style":"card","background":"gray"}],"width":0.5},{"id":"2f6a4f59-d16c-4063-8e07-8160cc4114c8","type":"column_item","children":[{"id":"7dab946c-94ba-4a9c-956d-4b1de06f501d","type":"container","children":[{"id":"cffe41dd-037a-447c-9724-9fcb16cccf1b","type":"h2","children":[{"id":"eaa7dfae-3eaf-41bd-ae4a-bb5bebc4ece5","text":"Andrew Li","styled":false}]},{"id":"f0c334cd-1f6a-45d3-b62c-51c59874fa9c","type":"p","children":[{"id":"17e6670e-0e33-442a-b723-75c5f1a5bbf3","text":"Teammate","bold":true,"italic":true,"color":"gray","styled":true}]},{"id":"27e12ed5-c9b9-45c9-af2f-4b55fe630652","type":"column","children":[{"id":"1788427e-0672-44f4-884d-33c6d6ee5e9c","type":"column_item","children":[{"id":"f7357e1a-06ac-41cc-9199-ee4087971c77","type":"img","children":[{"text":"","id":"899a12d7-9100-45ea-aece-039fd712e141"}],"url":"https://api.typedream.com/v0/document/public/3be3aa6e-3d86-4746-acfe-3138a655a388/2LEyTvdoiuXT0jlDjleu6TTptdo_034a2931-981e-43d9-9596-dfbb43fa2d24","width":700,"height":54.66957946477335,"aspect_ratio":12.804195804195803}],"width":0.5},{"id":"623cc001-a1cb-4f4e-acae-c071f2768646","type":"column_item","children":[{"id":"77b65e51-2b49-44d2-82df-a2c2e356e773","type":"p","children":[{"text":"","id":"6427ef6e-8f4f-4031-b239-1a6037aaaa32"}]}],"width":0.5}]}],"style":"card","background":"gray"}],"width":0.5}]},{"id":"8f7f569d-002a-4628-af07-bcbba0a4b7b6","type":"column","children":[{"id":"ea3d9266-8045-4847-99f0-5563467b8740","type":"column_item","children":[{"id":"e6caf6c5-b1df-4f75-beac-98655850903a","type":"container","children":[{"id":"3ecb3501-6168-4596-8e8f-4533fe1b0ea7","type":"h2","children":[{"id":"f0859a69-fa52-4d04-a4fc-89cc2e5694b0","text":"Josh Evans","styled":false}]},{"id":"f74a0a9e-d580-40d0-a35d-4b168d0a9eca","type":"p","children":[{"id":"84b1bff3-cff8-4c06-af95-7ba579c813b2","text":"Teammate","bold":true,"italic":true,"color":"gray","styled":true}]},{"id":"0f10f571-0b6f-4579-b129-574c0852659a","type":"column","children":[{"id":"11800f64-59f6-42f0-af96-22b7467dbfe8","type":"column_item","children":[{"id":"6c17a617-d119-48c7-96e9-d3738cc7f8a6","type":"img","children":[{"text":"","id":"1b105ff3-0c40-491e-8624-030955ee8375"}],"url":"https://api.typedream.com/v0/document/public/3be3aa6e-3d86-4746-acfe-3138a655a388/2LEyTu4d4YmHjTEge0EjcUkfOHK_0baed113-b1da-42ea-b785-bf959274c01b","width":700,"height":54.66957946477335,"aspect_ratio":12.804195804195803}],"width":0.5},{"id":"8a00e9cf-e45a-467b-94d5-4a39c4e18911","type":"column_item","children":[{"id":"ab753039-7eef-4cf1-be0b-11ba9c4d5d3a","type":"p","children":[{"text":"","id":"9d0ab031-ad78-484d-a756-05534954baca"}]}],"width":0.5}]}],"style":"card","background":"gray"}],"width":0.5},{"id":"1a2e1d50-3b8f-44f8-acb9-dc783a3bf41e","type":"column_item","children":[{"id":"6347a792-7e9b-4298-ad44-492232748e4a","type":"container","children":[{"id":"ac5f7062-9970-4266-9f3e-5a8e99833b72","type":"h2","children":[{"id":"701abb13-eedd-43b5-85ac-7bd37d82aa62","text":"Justin Schumacher","styled":false}]},{"id":"660afb4e-2a70-4f47-9550-e8c982673d6c","type":"p","children":[{"id":"0448f8cf-a27c-4ae4-a870-e41f4d355004","text":"BIOE340 TA","bold":true,"italic":true,"color":"gray","styled":true}]},{"id":"6f0b57e7-883f-4df1-8fe7-a5e308fb251b","type":"column","children":[{"id":"42769490-95ce-40f8-9aba-dba00976bbb3","type":"column_item","children":[{"id":"d488300a-314e-4810-8233-6e96c8ebd8db","type":"img","children":[{"text":"","id":"e357db78-9316-4150-949f-9d131485777f"}],"url":"https://api.typedream.com/v0/document/public/3be3aa6e-3d86-4746-acfe-3138a655a388/2LEyTthQELO5NUz1A5EZ52fsNVI_c323bd7c-ccc7-476a-8e0f-fc9716f37ea2","width":700,"height":54.66957946477335,"aspect_ratio":12.804195804195803}],"width":0.5},{"id":"d33920cf-a17a-4a40-9b41-483697bdcf32","type":"column_item","children":[{"id":"912ada51-09c6-42c2-8753-ea6757aca020","type":"p","children":[{"text":"","id":"71d54499-584f-4ae8-85cf-ff50e7d6f799"}]}],"width":0.5}]}],"style":"card","background":"gray"}],"width":0.5}]}],"type":"root","vertical_align":"align_start","id":"c702d28f-1b8c-4c2f-8905-6382b98947bb"}],"Level":"Advanced","Tags":"Computational Biology","Main Skills":"MATLAB","Author":"Mihir Modak","Type":"Programming","Abstract":"This is a simulation of the activity of a single neuron using a mathematical model called the Hodgkin-Huxley Model. This model can accurately represent the excitation and the action potential of a neuron. It can also account for sodium, potassium, and chloride ion concentrations and use those parameters to drive the excitation of the neuron. In this project, I was able to implement this model in MATLAB, and successfully simulate (and control) the activity of a neuron.","Publish":true,"Top 5":true,"TD:metadata":{"metatags":{"title":"Creating a Neuron using Code"}},"TD:page_content_published":"https://api.typedream.com/v0/app/collection_content/c2efa4e0-453a-4036-9046-359f2d2cfded_3be3aa6e-3d86-4746-acfe-3138a655a388_published_collection_rich_content.json","TD:slug":"creating-a-neuron-using-code","Name":"Creating a Neuron using Code","id":"c2efa4e0-453a-4036-9046-359f2d2cfded"},"expiresAt":"2023-03-02T16:02:51.748Z"}}},"isChildTemplate":true,"childTemplateSlug":"creating-a-neuron-using-code","requestedURL":"https://www.mihir-modak.com/my-projects/creating-a-neuron-using-code","detectedFeatures":{"icon":true}},"__N_SSG":true},"page":"/[slugOrDomain]/[[...path]]","query":{"slugOrDomain":"www.mihir-modak.com","path":["my-projects","creating-a-neuron-using-code"]},"buildId":"P5Jw33raxxbmC7Rm7WAQC","isFallback":false,"dynamicIds":[28953],"gsp":true,"scriptLoader":[]}</script>
-    <next-route-announcer>
+    <span class="_1untytp0"></span></p> -->
+    </div>
+
+    </div>
+    <!-- <next-route-announcer>
     <p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px none;
 				 clip: rect(0px, 0px, 0px, 0px);
 				 height: 1px;
@@ -1051,6 +1143,6 @@
 				 white-space: nowrap;
 				 overflow-wrap: normal;
 				"></p></next-route-announcer>
-    <script src="Creating%20a%20Neuron%20using%20Code_files/quicklink.umd.js" data-nscript="lazyOnload"></script>
+    <script src="resources/quicklink.umd.js" data-nscript="lazyOnload"></script> -->
     </body>
 </html>
